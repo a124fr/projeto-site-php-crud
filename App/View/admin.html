@@ -1,0 +1,21 @@
+<h1>Gerenciador de Conteúdo</h1>
+
+<a href="?pagina=admin&metodo=create">Criar Publicação</a> <br /><br />
+<hr />
+<br />
+<table border="2">
+	<tr>
+		<th>ID</th>
+		<th>TÍTULO</th>
+		<th>ALTERAÇÃO</th>
+		<th>DELEÇÃO</th>
+	</tr>
+	{% for postagem in postagens %}
+	<tr>
+		<td>{{postagem.id}}</td>
+		<td>{{postagem.titulo}}</td>	
+		<th><a href="?pagina=admin&metodo=change&id={{postagem.id}}">ALTERAÇÃO</a></th>
+		<td><a href="?pagina=admin&metodo=delete&id={{postagem.id}}">DELETAÇÃO</a></td>
+	</tr>
+	{% endfor %}
+</table>
